@@ -1,0 +1,25 @@
+{
+  "name": "one-hour-lottery-challenge",
+  "version": "0.0.1",
+  "description": "this project has to be done in 1 hour",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fleischers/TestApp1HourLotteryChallenge.git"
+  },
+  "keywords": [
+    "challenge"
+  ],
+  "author": "Glib Ischenko <glib@gorlifsense.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fleischers/TestApp1HourLotteryChallenge/issues"
+  },
+  "homepage": "https://github.com/Fleischers/TestApp1HourLotteryChallenge#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
