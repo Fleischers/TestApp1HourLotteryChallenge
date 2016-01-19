@@ -1,7 +1,4 @@
-
-
-
-
+// helper to send HTTP requests
 function getXmlHttp() {
     var xmlhttp;
     try {
@@ -21,13 +18,37 @@ function getXmlHttp() {
     return xmlhttp;
 }
 
-var xmlhttp = getXmlHttp();
-xmlhttp.open('GET', '/results', true);
-xmlhttp.onreadystatechange = function() {
-  if (xmlhttp.readyState == 4) {
-     if(xmlhttp.status == 200) {
-       alert(xmlhttp.responseText);
-         }
-  }
+window.onload = function(){
+    var newWinnerButton = document.getElementById("newWinner");
+    var saveButton = document.getElementById("save");
+    // console.log(newWinner); //debug
+
+    var nameInput = document.getElementById("name");
+    var surnameInput = document.getElementById("surname");
+    var emailInput = document.getElementById("email");
+    var phoneInput = document.getElementById("phone");
+
+    newWinnerButton.onclick = function () {
+        alert('newWinner');
+    };
+
+    saveButton.onclick = function () {
+        var saving = {
+            name: nameInput.value
+        };
+        alert('save' + saving.toString() + saving.name);
+    };
+
+    var table = document.getElementById("table_results");
+
+    var getResults = getXmlHttp();
+    getResults.open('GET', '/results', true);
+    getResults.onreadystatechange = function () {
+        if (getResults.readyState == 4) {
+            if (getResults.status == 200) {
+                console.log(getResults.responseText);
+            }
+        }
+    };
+    getResults.send(null);
 };
-xmlhttp.send(null);
